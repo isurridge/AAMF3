@@ -34,11 +34,8 @@
     
     <delete dir="test-report-xml" quiet="true"/>
     <echo message="deploying to ${sf.username}"/>
-    <sfdeploy
-            username="${sf.username}"
-            password="${sf.password}"
-            serverurl="${sf.serverurl}"
-            deployRoot="../src"
+    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src"
+           
             runalltests="true"
             maxpoll="60"
             junitreportdir="test-report-xml"
