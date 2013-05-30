@@ -30,6 +30,9 @@
     </target>
 	
 	
+    <path id="ant.additions.classpath">
+        <fileset dir="ant"/>
+    </path>
 
 
     <target name="deployAndTestAndReport">
