@@ -12,7 +12,9 @@
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged -->
     <target name="deploySF" description="Deploys the Twilio Helper Library for Salesforce to your organization">
       <echo message="Deploying SF Helper Library for Salesforce..."/>
-      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src"/>
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src">
+	   <runTest>Twilio_TestAccounts</runTest>
+	  </sf:deploy>
     </target>
 
     <!-- Shows check only; never actually saves to the server -->
