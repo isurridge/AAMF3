@@ -33,7 +33,7 @@
     <path id="ant.additions.classpath">
         <fileset dir="/home/ubuntu/"/>
     </path>
-     
+      
 
     <target name="deployAndTestAndReport">
         <taskdef
