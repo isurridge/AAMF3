@@ -1,0 +1,3 @@
+<fileset dir="../test-reports" casesensitive="yes">
+  <filename name="**/*Test*" negate="true"/>
+</fileset>
