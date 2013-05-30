@@ -31,15 +31,10 @@
 	
 	
 	<target name="deployAndTestAndReport">
-    
-    <delete dir="test-report-xml" quiet="true"/>
-    <echo message="deploying to ${sf.username}"/>
-    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src" runalltests="true" /> 
-            
-           
-            
-    
-</target>
+        <delete dir="test-report-xml" quiet="true"/>
+		<echo message="deploying to ${sf.username}"/>
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src" runalltests="true" /> 
+    </target>
 	
 	
 	
