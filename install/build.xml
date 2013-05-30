@@ -28,6 +28,27 @@
 	   <runTest>Twilio_TestTwiML</runTest>
 	  </sf:deploy>
     </target>
+	
+	
+	<target name="deployAndTestAndReport">
+    
+    <delete dir="test-report-xml" quiet="true"/>
+    <echo message="deploying to ${sf.username}"/>
+    <sfdeploy
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="../src"
+            runalltests="true"
+            maxpoll="60"
+            junitreportdir="test-report-xml"
+            >
+     </sfdeploy>
+</target>
+	
+	
+	
+	
 
     <!-- Shows check only; never actually saves to the server -->
     <target name="deploySFCheckOnly" description="Deploys the SF Helper Library in check-only mode, without saving changes">
