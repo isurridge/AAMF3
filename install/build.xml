@@ -14,6 +14,18 @@
       <echo message="Deploying SF Helper Library for Salesforce..."/>
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src">
 	   <runTest>Twilio_TestAccounts</runTest>
+	   <runTest>Twilio_TestApplication</runTest>
+	   <runTest>Twilio_TestCalls</runTest>
+	   <runTest>Twilio_TestCapability</runTest>
+	   <runTest>Twilio_TestConference</runTest>
+	   <runTest>Twilio_TestConnectApps</runTest>
+	   <runTest>Twilio_TestHTTPMock</runTest>
+	   <runTest>Twilio_TestNotification</runTest>
+	   <runTest>Twilio_TestPhoneNumbers</runTest>
+	   <runTest>Twilio_TestRecording</runTest>
+	   <runTest>Twilio_TestRest</runTest>
+	   <runTest>Twilio_TestSandbox</runTest>
+	   <runTest>Twilio_TestTwiML</runTest>
 	  </sf:deploy>
     </target>
 
