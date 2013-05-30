@@ -46,9 +46,9 @@
             username="${sf.username}"
             password="${sf.password}"
             serverurl="${sf.serverurl}"
-            deployRoot="src"
+            deployRoot="../src"
             runalltests="false"
-            junitreportdir="test-report-xml"
+            junitreportdir="../test-reports"
             >
             <!-- Run only tests with file names that match this pattern -->
             <batchtest>
