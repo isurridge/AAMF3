@@ -30,10 +30,32 @@
     </target>
 	
 	
-	<target name="deployAndTestAndReport">
+    <path id="ant.additions.classpath">
+        <fileset dir="ant"/>
+    </path>
+
+    <target name="deployAndTestAndReport">
+        <taskdef
+            name="sfdeploy"
+            classname="com.claimvantage.force.ant.DeployWithXmlReportTask"
+            classpathref="ant.additions.classpath"
+            />
         <delete dir="test-report-xml" quiet="true"/>
-		<echo message="deploying to ${sf.username}"/>
-		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../src" runalltests="true" /> 
+        <sfdeploy
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="src"
+            runalltests="false"
+            junitreportdir="test-report-xml"
+            >
+            <!-- Run only tests with file names that match this pattern -->
+            <batchtest>
+                <fileset dir="../src/classes">
+                    <include name="*Test.cls"/>
+                </fileset>
+            </batchtest>
+        </sfdeploy>
     </target>
 	
 	
